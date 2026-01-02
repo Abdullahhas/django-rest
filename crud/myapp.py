@@ -22,9 +22,9 @@ def get_data(id = None):
 def create_data():
 
     data = {
-    'name': "ali naqi",
-    'roll' : 32,
-    'city' : 'lahore'
+    'name': "ali leg",
+    'roll' : 198,
+    'city' : 'dgk'
 }
 
     json_data = json.dumps(data)
@@ -63,14 +63,14 @@ def delete_data():
     data = r.json()
     print(data)
 
-delete_data()
+# delete_data()
 
 
     
 # get_data()
 # get_data(1)
 
-# create_data()
+create_data()
 
 # update_data()
 

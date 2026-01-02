@@ -18,8 +18,11 @@ def std_api(request):
 
         if (student_id):
             student = Student.objects.get(id = student_id)
+            print(student)
             serializer = StudentSerializer(student)
+            print(serializer.data)
             json_data = JSONRenderer().render(serializer.data)
+            print(json_data)
             return HttpResponse(json_data , content_type = 'application/json')
         
 
@@ -30,8 +33,10 @@ def std_api(request):
     
     if request.method == 'POST':
         json_data = request.body
+        print(json_data)
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
+        print(python_data)
         serializer = StudentSerializer(data = python_data)
         if serializer.is_valid():
             serializer.save()
